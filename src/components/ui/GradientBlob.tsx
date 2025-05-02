@@ -35,15 +35,6 @@ export const GradientBlob: React.FC<GradientBlobProps> = ({
         height: size,
         filter: `blur(${blur}px)`,
       }}
-      variants={variants}
-      initial="initial"
-      animate="animate"
-      transition={{
-        duration,
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "easeInOut",
-      }}
     />
   )
 }

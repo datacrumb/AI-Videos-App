@@ -1,11 +1,11 @@
-import type React from "react"
-import { Monitor, Zap, Layout, Headphones, Shield, Share2 } from "lucide-react"
-import { GradientBlob } from "./ui/GradientBlob"
+import type React from "react";
+import { Monitor, Zap, Layout, Headphones, Shield, Share2 } from "lucide-react";
+import { GradientBlob } from "./ui/GradientBlob";
 
 interface FeatureProps {
-  icon: React.ReactNode
-  title: string
-  description: string
+  icon: React.ReactNode;
+  title: string;
+  description: string;
 }
 
 function Feature({ icon, title, description }: FeatureProps) {
@@ -15,21 +15,26 @@ function Feature({ icon, title, description }: FeatureProps) {
       <h3 className="text-lg font-medium text-white mb-2">{title}</h3>
       <p className="text-sm text-gray-400">{description}</p>
     </div>
-  )
+  );
 }
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-black to-[#050a14]">
-      <div className="max-w-5xl mx-auto">
+    <section className="relative pt-16 pb-24 px-4 overflow-x-clip">
+      <div className="hidden md:block absolute inset-0 z-0 translate-x-[390px] translate-y-40">
+        <GradientBlob colors={["#6B49FF", "#6B49FF"]} size={440} blur={80} />
+      </div>
+
+      <div className="relative z-10 max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-2">Why choose us</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Unlock the full potential of your business with exceptional features and unmatched performance.
+          <h2 className="text-4xl font-satoshi text-white mb-2">Why choose us</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-xl">
+            Unlock the full potential of your business with exceptional features<br />
+            and unmatched performance.
           </p>
         </div>
 
-        <div className="bg-[#0a1428] rounded-xl p-8 border border-[#1e2d3d] relative">
+        <div className="[background-color:rgba(10,20,40,0.85)] rounded-xl p-8 border border-[#1e2d3d]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Feature
               icon={<Monitor size={24} />}
@@ -65,5 +70,5 @@ export default function WhyChooseUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }

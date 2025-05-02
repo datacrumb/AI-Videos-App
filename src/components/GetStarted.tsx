@@ -28,7 +28,7 @@ const GetStarted = () => {
           </Button>
         </div>
         <svg
-          className="absolute inset-0"
+          className="absolute inset-0 -translate-x-80 md:translate-x-0"
           width="1403"
           height="472"
           viewBox="0 0 1403 472"

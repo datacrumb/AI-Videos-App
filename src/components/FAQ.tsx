@@ -41,10 +41,10 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="py-16 px-4 relative overflow-x-clip bg-black">
+    <section className="pt-16 pb-64 px-4 relative overflow-x-clip bg-black">
       {/* Background gradient */}
       <svg
-        className="absolute inset-0 translate-x-32 -translate-y-20"
+        className="absolute inset-0 -translate-x-80 md:translate-x-32 md:-translate-y-20"
         width="994"
         height="708"
         viewBox="0 0 994 708"

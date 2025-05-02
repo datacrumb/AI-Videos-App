@@ -228,9 +228,9 @@ const ReviewCard = ({
 
 const OurClients = () => {
   return (
-    <div className="relative flex items-center justify-center py-10 overflow-hidden">
+    <div className="relative flex items-center justify-center pt-20 overflow-hidden">
       <div className="lex flex-col items-center justify-center w-full text-center">
-        <h1 className="text-3xl font-bold text-white mb-10">Our Clients</h1>
+        <h1 className="text-5xl text-white mb-16">Our Clients</h1>
         <Marquee repeat={4} pauseOnHover>
           {clientSVGS.map((svg, index) => (
             <div key={index} className="mx-8">{svg.svg}</div>
