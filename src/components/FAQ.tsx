@@ -68,7 +68,7 @@ export default function FAQSection() {
             width="994"
             height="708"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
@@ -90,8 +90,8 @@ export default function FAQSection() {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(497 354) rotate(90) scale(371.678 565.656)"
           >
-            <stop stop-color="#A793FF" />
-            <stop offset="1" stop-color="#A793FF" stop-opacity="0" />
+            <stop stopColor="#A793FF" />
+            <stop offset="1" stopColor="#A793FF" stopOpacity="0" />
           </radialGradient>
         </defs>
       </svg>

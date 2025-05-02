@@ -25,8 +25,244 @@ const NavLinks = [
 
 export default function Header() {
   return (
-    <div className="flex items-center justify-center py-4 z-10">
-      <header className="relative w-full max-w-xl bg-black text-white border border-blue-900 rounded-full">
+    <div className="relative flex items-center justify-center py-4 z-10 overflow-x-clip">
+      <svg
+        className="absolute inset-0 translate-x-48"
+        width="909"
+        height="209"
+        viewBox="0 0 909 209"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <ellipse
+          opacity="0.9"
+          cx="454.5"
+          cy="-27"
+          rx="454.5"
+          ry="236"
+          fill="url(#paint0_radial_1_577)"
+        />
+        <defs>
+          <radialGradient
+            id="paint0_radial_1_577"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(454.5 -27) rotate(90) scale(245.854 424.255)"
+          >
+            <stop stopColor="#0059FF" stopOpacity="0.37" />
+            <stop offset="1" stopColor="#010101" stopOpacity="0.32" />
+          </radialGradient>
+        </defs>
+      </svg>
+      <header className="relative w-full max-w-xl [background-color:rgba(0,0,0,0.25)] text-white border border-[#FFFFFF1F] rounded-full">
+        <svg
+            className="absolute inset-0 stroke-white"
+          width="1035"
+          height="995"
+          viewBox="0 0 1035 995"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            id="mask0_1_553"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="-26"
+            width="1035"
+            height="1021"
+          >
+            <line
+              x1="93.6264"
+              y1="-26"
+              x2="93.6264"
+              y2="994.854"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="1035"
+              y1="60.5535"
+              x2="-5.53005e-08"
+              y2="60.5534"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="187.932"
+              y1="-26"
+              x2="187.932"
+              y2="994.854"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="1035"
+              y1="154.859"
+              x2="-5.53005e-08"
+              y2="154.859"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="282.237"
+              y1="-26"
+              x2="282.237"
+              y2="994.854"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="1035"
+              y1="249.164"
+              x2="-5.53005e-08"
+              y2="249.164"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="376.542"
+              y1="-26"
+              x2="376.542"
+              y2="994.854"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="1035"
+              y1="343.469"
+              x2="-5.53005e-08"
+              y2="343.469"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="470.847"
+              y1="-26"
+              x2="470.847"
+              y2="994.854"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="1035"
+              y1="437.774"
+              x2="-5.53005e-08"
+              y2="437.774"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="565.153"
+              y1="-26"
+              x2="565.153"
+              y2="994.854"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="1035"
+              y1="532.08"
+              x2="-5.53005e-08"
+              y2="532.08"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="659.458"
+              y1="-26"
+              x2="659.458"
+              y2="994.854"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="1035"
+              y1="626.385"
+              x2="-5.53005e-08"
+              y2="626.385"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="753.763"
+              y1="-26"
+              x2="753.763"
+              y2="994.854"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="1035"
+              y1="720.69"
+              x2="-5.53005e-08"
+              y2="720.69"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="848.068"
+              y1="-26"
+              x2="848.068"
+              y2="994.854"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="1035"
+              y1="814.995"
+              x2="-5.53005e-08"
+              y2="814.995"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="942.374"
+              y1="-26"
+              x2="942.374"
+              y2="994.854"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+            <line
+              x1="1035"
+              y1="909.301"
+              x2="-5.53005e-08"
+              y2="909.301"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+          </mask>
+          <g mask="url(#mask0_1_553)">
+            <ellipse
+              cx="517.5"
+              cy="511"
+              rx="711.5"
+              ry="642"
+              fill="url(#paint0_radial_1_553)"
+            />
+            <path
+              d="M517.5 -130.5C910.224 -130.5 1228.5 156.756 1228.5 511C1228.5 865.244 910.224 1152.5 517.5 1152.5C124.776 1152.5 -193.5 865.244 -193.5 511C-193.5 156.756 124.776 -130.5 517.5 -130.5Z"
+              stroke="white"
+              strokeOpacity="0.15"
+            />
+          </g>
+          <defs>
+            <radialGradient
+              id="paint0_radial_1_553"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(517.5 511) rotate(90) scale(642 711.5)"
+            >
+              <stop stopColor="white" stopOpacity="0.8" />
+              <stop offset="0.874" stopColor="#010101" />
+            </radialGradient>
+          </defs>
+        </svg>
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Navigation Bar */}
           <div className="flex h-16 items-center justify-between">
@@ -77,10 +313,9 @@ export default function Header() {
               ))}
             </nav>
 
-
             {/* CTA Button */}
             <div className="flex items-center justify-center gap-4">
-            <MobileMenuSheet />
+              <MobileMenuSheet />
               <Button
                 className="text-white px-4 py-2 bg-blue-500/25 rounded-lg shadow-[inset_0_0_10px_0_#0099FF]"
                 size="sm"

@@ -35,7 +35,7 @@ export default function AnimationEditor() {
   return (
     <div className="mb-8 mt-4 grid md:grid-cols-[220px_1fr_220px] gap-4">
       {/* Left Panel - Layers */}
-      <div className="rounded-lg bg-gray-900 p-3">
+      <div className="rounded-lg bg-gray-900 z-10 p-3">
         <div className="mb-2 flex items-center justify-between">
           <h3 className="text-xs font-medium text-gray-400">Layers</h3>
           <div className="flex items-center gap-2">
@@ -74,7 +74,11 @@ export default function AnimationEditor() {
       </div>
 
       {/* Center Panel - Preview */}
-      <div className="relative flex flex-col rounded-lg bg-gray-900">
+      <div className="relative flex flex-col rounded-xl z-10 bg-gray-900 
+      border-t 
+      border-[1px] 
+      [border-image-source:linear-gradient(90deg,#192235_0%,#0059FF_40%,#6FADFF_50%,#0059FF_60%,#192235_100%)] 
+      [border-image-slice:1]">
         <div className="flex-1 bg-[#0a1428] p-4">
           <div className="flex h-full items-center justify-center">
             <div className="relative items-center justify-center h-64 w-64">
@@ -653,7 +657,7 @@ export default function AnimationEditor() {
       </div>
 
       {/* Right Panel - Properties */}
-      <div className="rounded-lg bg-gray-900 p-3">
+      <div className="rounded-lg bg-gray-900 z-10 p-3">
         <Tabs defaultValue="design">
           <TabsList className="grid w-full grid-cols-2 bg-gray-800">
             <TabsTrigger value="design" className="text-xs">

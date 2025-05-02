@@ -52,8 +52,8 @@ const GetStarted = () => {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(701.5 236) rotate(90) scale(245.854 654.819)"
             >
-              <stop stop-color="#0059FF" stop-opacity="0.37" />
-              <stop offset="1" stop-color="#010101" stop-opacity="0.32" />
+              <stop stopColor="#0059FF" stopOpacity="0.37" />
+              <stop offset="1" stopColor="#010101" stopOpacity="0.32" />
             </radialGradient>
           </defs>
         </svg>
