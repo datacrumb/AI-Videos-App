@@ -233,7 +233,7 @@ const OurClients = () => {
         <h1 className="text-3xl font-bold text-white mb-10">Our Clients</h1>
         <Marquee repeat={4} pauseOnHover>
           {clientSVGS.map((svg, index) => (
-            <div key={index}>{svg.svg}</div>
+            <div key={index} className="mx-8">{svg.svg}</div>
           ))}
         </Marquee>
       </div>
