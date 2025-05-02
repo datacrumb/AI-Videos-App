@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export default function HeroSection() {
     return (
-        <section className="py-12 text-center">
+        <section className="py-12 pt-22 text-center">
                 <h1 className="text-4xl font-medium tracking-tight text-white sm:text-5xl md:text-6xl z-10">
                     Transform Concepts into,
                     <br />
