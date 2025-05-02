@@ -80,7 +80,7 @@ const ReviewCard = ({
 
 export function MarqueeDemo() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-x-clip">
+    <div className="relative py-20 flex w-full flex-col items-center justify-center overflow-x-clip">
       <svg
         className="absolute inset-0 md:-translate-y-40 md:translate-x-72"
         width="656"
