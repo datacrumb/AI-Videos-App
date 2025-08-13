@@ -41,60 +41,15 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="pt-16 pb-64 px-4 relative overflow-x-clip bg-black">
-      {/* Background gradient */}
-      <svg
-        className="absolute inset-0 -translate-x-80 md:translate-x-32 md:-translate-y-20"
-        width="994"
-        height="708"
-        viewBox="0 0 994 708"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g opacity="0.2" filter="url(#filter0_f_1_502)">
-          <ellipse
-            cx="497"
-            cy="354"
-            rx="417"
-            ry="274"
-            fill="url(#paint0_radial_1_502)"
-          />
-        </g>
-        <defs>
-          <filter
-            id="filter0_f_1_502"
-            x="0"
-            y="0"
-            width="994"
-            height="708"
-            filterUnits="userSpaceOnUse"
-            colorInterpolationFilters="sRGB"
-          >
-            <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="BackgroundImageFix"
-              result="shape"
-            />
-            <feGaussianBlur
-              stdDeviation="40"
-              result="effect1_foregroundBlur_1_502"
-            />
-          </filter>
-          <radialGradient
-            id="paint0_radial_1_502"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="translate(497 354) rotate(90) scale(371.678 565.656)"
-          >
-            <stop stopColor="#A793FF" />
-            <stop offset="1" stopColor="#A793FF" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-      </svg>
+    <section className="pt-16 pb-30 px-4 relative overflow-x-clip bg-black">
+      {/* Background gradient - Responsive and Centered */}
+      <div
+        className="absolute inset-0 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-96 opacity-20"
+        style={{
+          background: 'radial-gradient(ellipse 50% 100% at 50% 50%, #A793FF 0%, rgba(167, 147, 255, 0) 100%)',
+          filter: 'blur(40px)'
+        }}
+      />
 
       <div className="max-w-3xl mx-auto relative z-10">
         <div className="text-center mb-12">
@@ -104,22 +59,43 @@ export default function FAQSection() {
         </div>
 
         <Accordion type="single" collapsible className="space-y-4">
-          {faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="border-none rounded-lg overflow-hidden bg-[#0a1428] border border-[#1e2d3d]"
-            >
-              <AccordionTrigger className="px-6 py-4 text-white hover:no-underline hover:bg-[#0d1a2d] transition-colors">
-                <span className="text-left text-base font-medium">
-                  {faq.question}
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pb-4 pt-1 text-gray-400">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
+          {faqs.map((faq, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="border-none rounded-lg overflow-hidden relative"
+                style={{
+                  background: isEven 
+                    ? 'radial-gradient(43.69% 75.71% at 50% 44.52%, #10141A 0%, #0C1018 50%, #0A1017 100%)'
+                    : 'radial-gradient(43.69% 75.71% at 50% 44.52%, #13101A 0%, #0F0C18 50%, #0D0A17 100%)'
+                }}
+              >
+                {/* Rounded border overlay */}
+                <div 
+                  className="absolute inset-0 rounded-lg pointer-events-none"
+                  style={{
+                    background: isEven
+                      ? 'radial-gradient(100% 100% at 50% 0%, rgba(104, 114, 131, 0.4) 0%, rgba(104, 114, 131, 0.2) 100%)'
+                      : 'radial-gradient(100% 100% at 50% 0%, rgba(124, 119, 148, 0.4) 0%, rgba(124, 119, 148, 0.2) 100%)',
+                    mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                    maskComposite: 'exclude',
+                    padding: '1px'
+                  }}
+                />
+                
+                <AccordionTrigger className="px-6 py-4 text-white hover:no-underline transition-colors relative z-10">
+                  <span className="text-left text-base font-medium">
+                    {faq.question}
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 pt-1 text-gray-400 relative z-10">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            );
+          })}
         </Accordion>
       </div>
     </section>

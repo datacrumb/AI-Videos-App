@@ -57,23 +57,33 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        // light styles
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+        "relative cursor-pointer overflow-hidden backdrop-blur-4xl p-6 rounded-[14px]",
       )}
+      style={{
+        background: 'linear-gradient(180deg, #0F0C18 0%, #0D0A17 50%, #110828 100%)',
+        border: '0.8px solid rgba(63, 50, 95, 0.3)',
+        backdropFilter: 'blur(16px)'
+      }}
     >
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+      {/* Rounded top border that matches card corners */}
+      <div 
+        className="absolute top-0 left-0 right-0 h-[0.8px]"
+        style={{
+          background: 'linear-gradient(90deg, #3F325F 0%, rgba(63, 50, 95, 0.8) 50%, rgba(63, 50, 95, 0) 100%)',
+          borderRadius: '14px 14px 0 0'
+        }}
+      />
+      
+      <div className="flex flex-row items-center gap-6">
+        <img className="rounded-full w-10 h-10 object-cover" alt="" src={img} />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
+          <figcaption className="text-sm font-semibold text-white">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+          <p className="text-xs text-gray-300 font-medium">{username}</p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="mt-3 text-sm text-white leading-relaxed">{body}</blockquote>
     </figure>
   );
 };
@@ -81,13 +91,222 @@ const ReviewCard = ({
 export function MarqueeDemo() {
   return (
     <div className="relative py-20 flex w-full flex-col items-center justify-center overflow-x-clip">
+      {/* Grid SVG - Responsive and Centered */}
       <svg
-        className="absolute inset-0 md:-translate-y-40 md:translate-x-72"
+        className="absolute inset-0 left-1/2 transform -translate-x-1/2 stroke-white"
+        width="533"
+        height="526"
+        viewBox="0 0 533 526"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <mask
+          id="mask0_1_503"
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="533"
+          height="526"
+        >
+          <line
+            x1="48.4579"
+            y1="0.000122098"
+            x2="48.4579"
+            y2="525.715"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="533"
+            y1="44.8154"
+            x2="-5.53006e-08"
+            y2="44.8154"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="97.0228"
+            y1="0.000122098"
+            x2="97.0228"
+            y2="525.715"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="533"
+            y1="93.3799"
+            x2="-5.53006e-08"
+            y2="93.3798"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="145.588"
+            y1="0.000122098"
+            x2="145.588"
+            y2="525.715"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="533"
+            y1="141.945"
+            x2="-5.53006e-08"
+            y2="141.945"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="194.153"
+            y1="0.000122098"
+            x2="194.153"
+            y2="525.715"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="533"
+            y1="190.51"
+            x2="-5.53006e-08"
+            y2="190.51"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="242.718"
+            y1="0.000122098"
+            x2="242.718"
+            y2="525.715"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="533"
+            y1="239.075"
+            x2="-5.53006e-08"
+            y2="239.075"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="291.282"
+            y1="0.000122098"
+            x2="291.282"
+            y2="525.715"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="533"
+            y1="287.64"
+            x2="-5.53006e-08"
+            y2="287.64"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="339.847"
+            y1="0.000122098"
+            x2="339.847"
+            y2="525.715"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="533"
+            y1="336.205"
+            x2="-5.53006e-08"
+            y2="336.205"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="388.412"
+            y1="0.000122098"
+            x2="388.412"
+            y2="525.715"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="533"
+            y1="384.771"
+            x2="-5.53006e-08"
+            y2="384.77"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="436.977"
+            y1="0.000122098"
+            x2="436.977"
+            y2="525.715"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="533"
+            y1="433.335"
+            x2="-5.53006e-08"
+            y2="433.335"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="485.542"
+            y1="0.000122098"
+            x2="485.542"
+            y2="525.715"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+          <line
+            x1="533"
+            y1="481.9"
+            x2="-5.53006e-08"
+            y2="481.9"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+        </mask>
+        <g mask="url(#mask0_1_503)">
+          <ellipse
+            cx="266.5"
+            cy="134"
+            rx="465.5"
+            ry="188"
+            fill="url(#paint0_radial_1_503)"
+          />
+          <path
+            d="M266.5 -53.5C394.996 -53.5 511.305 -32.4644 595.471 1.52734C637.555 18.5238 671.579 38.7499 695.073 61.1836C718.567 83.6161 731.5 108.223 731.5 134C731.5 159.777 718.567 184.384 695.073 206.816C671.579 229.25 637.555 249.476 595.471 266.473C511.305 300.464 394.996 321.5 266.5 321.5C138.004 321.5 21.6952 300.464 -62.4707 266.473C-104.555 249.476 -138.579 229.25 -162.073 206.816C-185.567 184.384 -198.5 159.777 -198.5 134C-198.5 108.223 -185.567 83.6161 -162.073 61.1836C-138.579 38.7499 -104.555 18.5238 -62.4707 1.52734C21.6952 -32.4644 138.004 -53.5 266.5 -53.5Z"
+            stroke="white"
+            strokeOpacity="0.15"
+          />
+        </g>
+        <defs>
+          <radialGradient
+            id="paint0_radial_1_503"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(266.5 134) rotate(90) scale(188 465.5)"
+          >
+            <stop stopColor="white" stopOpacity="0.8" />
+            <stop offset="0.609" stopColor="#010101" />
+          </radialGradient>
+        </defs>
+      </svg>
+      
+      {/* Heart SVG */}
+      <svg
+        className="absolute inset-0 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl"
         width="656"
         height="656"
         viewBox="0 0 656 656"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
       >
         <g filter="url(#filter0_i_1_500)">
           <path
@@ -157,13 +376,74 @@ export function MarqueeDemo() {
           </linearGradient>
         </defs>
       </svg>
-      <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-        Our Customer
-      </h1>
+      <div className="relative text-center mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white relative z-10">
+          Our Customers
+        </h1>
 
-      <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-        What people say about us.
-      </p>
+        <p className="text-gray-400 mb-8 max-w-lg mx-auto relative z-10">
+          What people say about us.
+        </p>
+        
+        {/* Radial gradient background */}
+        <svg
+          className="absolute inset-0 left-1/2 transform -translate-x-1/2"
+          width="531"
+          height="249"
+          viewBox="0 0 531 249"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g opacity="0.6" filter="url(#filter0_f_1_1433)">
+            <ellipse
+              cx="265.5"
+              cy="124.5"
+              rx="185.5"
+              ry="44.5"
+              fill="url(#paint0_radial_1_1433)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_1_1433"
+              x="0"
+              y="0"
+              width="531"
+              height="249"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="40"
+                result="effect1_foregroundBlur_1_1433"
+              />
+            </filter>
+            <radialGradient
+              id="paint0_radial_1_1433"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(265.5 124.5) rotate(90) scale(125.5 121.7)"
+            >
+              <stop stopColor="#9077FF" stopOpacity="0.8" />
+              <stop
+                offset="0.122757"
+                stopColor="#6B49FF"
+                stopOpacity="0.7"
+              />
+              <stop offset="1" stopColor="#6B49FF" stopOpacity="0.6" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />

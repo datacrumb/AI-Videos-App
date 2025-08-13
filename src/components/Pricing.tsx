@@ -1,5 +1,5 @@
 import type React from "react";
-import { Circle } from "lucide-react";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 interface PricingTierProps {
   name: string;
@@ -20,7 +20,7 @@ function PricingTier({
 }: PricingTierProps) {
   // Determine which gradient style to apply based on the plan name
   const getCardStyle = () => {
-    if (name === "Professional") {
+    if (popular) {
       return {
         background:
           "linear-gradient(180deg, #1B1430 0%, #0F0D16 50%, #1B1430 100%)",
@@ -29,7 +29,7 @@ function PricingTier({
         borderTopWidth: "3.4px",
       };
     } else {
-      // For Starter and Enterprise
+      // For non-popular plans
       return {
         background:
           "radial-gradient(43.69% 75.71% at 50% 44.52%, #10141A 0%, #0C121C 50%, #0A1017 100%)",
@@ -79,7 +79,7 @@ function PricingTier({
       <ul className="space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <Circle className="h-4 w-4 text-[#6366F1] mr-2 mt-0.5 flex-shrink-0 stroke-[3px]" />
+            <IoIosCheckmarkCircleOutline  className="h-4 w-4 text-[#6366F1] mr-2 mt-0.5 flex-shrink-0 stroke-[3px]" />
             <span className="text-sm text-gray-300">{feature}</span>
           </li>
         ))}
@@ -91,8 +91,9 @@ function PricingTier({
 export default function PricingSection() {
   return (
     <section className="relative py-16 px-4 bg-black">
+      {/* Grid SVG */}
       <svg
-        className="absolute inset-0 -translate-x-28 md:translate-x-80 stroke-white"
+        className="absolute inset-0 left-1/2 transform -translate-x-1/2 stroke-white"
         width="533"
         height="526"
         viewBox="0 0 533 526"
@@ -299,8 +300,9 @@ export default function PricingSection() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-medium text-white z-10">Explore all plans</h2>
+          {/* Radial gradient background */}
           <svg
-            className="absolute inset-0 -translate-x-28 md:translate-x-80"
+            className="absolute inset-0 left-1/2 transform -translate-x-1/2"
             width="531"
             height="249"
             viewBox="0 0 531 249"

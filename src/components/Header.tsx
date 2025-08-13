@@ -26,36 +26,13 @@ const NavLinks = [
 export default function Header() {
   return (
     <div className="relative flex items-center justify-center py-4 z-10 overflow-x-clip">
-      <svg
-        className="absolute inset-0 translate-x-48"
-        width="909"
-        height="209"
-        viewBox="0 0 909 209"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <ellipse
-          opacity="0.9"
-          cx="454.5"
-          cy="-27"
-          rx="454.5"
-          ry="236"
-          fill="url(#paint0_radial_1_577)"
-        />
-        <defs>
-          <radialGradient
-            id="paint0_radial_1_577"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="translate(454.5 -27) rotate(90) scale(245.854 424.255)"
-          >
-            <stop stopColor="#0059FF" stopOpacity="0.37" />
-            <stop offset="1" stopColor="#010101" stopOpacity="0.32" />
-          </radialGradient>
-        </defs>
-      </svg>
+      {/* Radial gradient background using Tailwind CSS - Centered */}
+      <div 
+        className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-32 sm:h-40 md:h-52 opacity-90"
+        style={{
+          background: 'radial-gradient(ellipse 50% 100% at 50% 0%, rgba(0, 89, 255, 0.37) 0%, rgba(1, 1, 1, 0.32) 100%)'
+        }}
+      />
       <header className="relative w-full max-w-xl [background-color:rgba(0,0,0,0.25)] text-white border border-[#FFFFFF1F] rounded-full">
         <svg
             className="absolute inset-0 stroke-white -translate-x-40"

@@ -11,7 +11,7 @@ import OurClients from "@/components/OurClients"
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <HeroSection />
         <AnimationEditor />
         <OurClients />
