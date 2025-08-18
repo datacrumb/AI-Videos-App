@@ -14,29 +14,44 @@ interface FAQItem {
 export default function FAQSection() {
   const faqs: FAQItem[] = [
     {
-      question: "Can I use Animify for free?",
+      question: "How much does each video cost?",
       answer:
-        "Yes, Animify offers a free tier with limited features. You can create animations, export at lower resolutions, and access basic templates without paying anything. This is perfect for beginners or those wanting to try out the platform before committing to a paid plan.",
+        "Our pricing ranges from ₹5 to ₹10 per video, depending on the volume you purchase. The larger the package, the lower the per-video cost.",
     },
     {
-      question: "Why should I upgrade to the Starter plan?",
+      question: "What's the minimum order size?",
       answer:
-        "The Starter plan removes watermarks, increases export quality to HD, and gives you access to more templates and features. It's ideal for individual creators who need professional-quality outputs without the enterprise-level features. You'll also get priority support and higher export limits.",
+        "The minimum order is 5,000 videos. This ensures you can run a meaningful campaign and see measurable results.",
     },
     {
-      question: "How does workspace billing work?",
+      question: "How personalized are the videos?",
       answer:
-        "Workspace billing is based on the number of seats (users) and your selected plan. You'll be billed monthly or annually, depending on your preference. Each workspace can have multiple projects, and billing is consolidated into a single invoice. You can add or remove seats at any time, and your bill will be prorated accordingly.",
+        "Each video is fully customized with details like the lead's name, company, industry, logo, and even tailored CTAs—making outreach feel truly 1:1.",
     },
     {
-      question: "How do I cancel my subscription?",
+      question: "How long does it take to generate videos?",
       answer:
-        "You can cancel your subscription at any time from your account settings. Navigate to Billing > Subscription and click the 'Cancel Subscription' button. Your access will continue until the end of your current billing period. We don't offer refunds for partial months, but you won't be charged again after cancellation.",
+        "You can create 100 to 10,000+ videos in minutes. Our AI is built for speed and scale.",
     },
     {
-      question: "What is your refund policy?",
+      question: "Where can I use these videos?",
       answer:
-        "We offer a 14-day money-back guarantee for all new subscriptions. If you're not satisfied with our service within the first 14 days, contact our support team for a full refund. After this period, refunds are handled on a case-by-case basis. Annual subscriptions may be eligible for partial refunds of unused months.",
+        "Videos can be shared across email, WhatsApp, LinkedIn, landing pages, and websites. You can also integrate with CRMs for automated campaigns.",
+    },
+    {
+      question: "Is the data secure?",
+      answer:
+        "Yes. All projects are stored in encrypted cloud storage, ensuring your videos and lead data are safe.",
+    },
+    {
+      question: "Do you offer integrations?",
+      answer:
+        "Yes, we support integrations with Google Drive, Dropbox, Slack, HubSpot, Salesforce, Zoho, and more (on higher plans).",
+    },
+    {
+      question: "What kind of response rates can I expect?",
+      answer:
+        "Personalized video outreach typically delivers 12–40% response rates, with some campaigns achieving 5× more meetings booked compared to cold emails.",
     },
   ];
 

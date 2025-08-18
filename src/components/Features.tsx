@@ -70,10 +70,10 @@ export default function FeaturesSection() {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Easy-to-Use Interface */}
+          {/* Boost Response Rates */}
           <FeatureCard
-            title="Easy-to-Use Interface"
-            description="Users can quickly start using the platform without needing a steep learning curve."
+            title="Boost Response Rates"
+            description="Personalized videos outperform cold calls and emails, delivering up to 40% reply rates."
           >
             <div className="bg-[#0d1a2d] rounded-lg p-3 relative overflow-hidden">
               <div className="flex">
@@ -166,10 +166,10 @@ export default function FeaturesSection() {
             </div>
           </FeatureCard>
 
-          {/* Collaboration Tools */}
+          {/* Book More Meetings */}
           <FeatureCard
-            title="Collaboration Tools"
-            description="Explanation: If your product enables collaboration, emphasize the ability for teams to work together in real time."
+            title="Book More Meetings"
+            description="Teams report 5x more meetings booked with video outreach compared to traditional methods."
           >
             <div className="flex justify-center items-center h-[180px] relative">
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -284,10 +284,10 @@ export default function FeaturesSection() {
             </div>
           </FeatureCard>
 
-          {/* Secure Cloud Storage */}
+          {/* Cut Outreach Costs */}
           <FeatureCard
-            title="Secure Cloud Storage"
-            description="With cloud storage, users' projects are automatically saved, ensuring their data is never lost."
+            title="Cut Outreach Costs"
+            description="Send 1,000 personalized videos for just ₹5,000—cheaper than SDR salaries or ads."
           >
             <div className="flex justify-center items-center h-[180px] relative">
               <div className="relative">
@@ -413,10 +413,10 @@ export default function FeaturesSection() {
             </div>
           </FeatureCard>
 
-          {/* Wide Integration Support */}
+          {/* Stand Out Instantly */}
           <FeatureCard
-            title="Wide Integration Support"
-            description="The ability to integrate with third-party apps (e.g., Google Drive, Dropbox, Slack) is essential for users who rely on a suite of tools."
+            title="Stand Out Instantly"
+            description="Unlike generic emails, videos build trust and leave a lasting impression."
           >
             <div className="flex justify-center items-center h-[180px]">
               <div className="flex items-center gap-4">

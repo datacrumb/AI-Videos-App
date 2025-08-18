@@ -11,7 +11,7 @@ interface FeatureProps {
 function Feature({ icon, title, description }: FeatureProps) {
   return (
     <div className="flex flex-col items-center text-center p-6">
-      <div className="mb-4 text-blue-400">{icon}</div>
+      <div className="mb-4 text-white">{icon}</div>
       <h3 className="text-lg font-medium text-white mb-2">{title}</h3>
       <p className="text-sm text-gray-400">{description}</p>
     </div>
@@ -34,37 +34,37 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
-        <div className="[background-color:rgba(10,20,40,0.85)] rounded-xl p-8 border border-[#1e2d3d]">
+        <div className="bg-gray-950/65 rounded-xl p-8 border border-[#FFFFFF33]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Feature
               icon={<Monitor size={24} />}
-              title="Intuitive User Experience"
-              description="A clean and simple interface designed for maximum ease and efficiency."
+              title="Seamless Video Creation"
+              description="Generate 100-10,000+ personalized outreach videos in minutes—no steep learning curve."
             />
             <Feature
               icon={<Zap size={24} />}
-              title="Boost Productivity"
-              description="Use our powerful tools to increase productivity."
+              title="Boost Sales Productivity"
+              description="Cut manual work and scale campaigns effortlessly, booking 2-3x more meetings."
             />
             <Feature
               icon={<Layout size={24} />}
-              title="Customizable Templates"
-              description="Get ready-made templates that you can customize for your projects."
+              title="Fully Customizable Templates"
+              description="Easily adapt videos with personalized names, logos, and details for each lead."
             />
             <Feature
               icon={<Headphones size={24} />}
-              title="24/7 Support"
-              description="Access our support anytime and get intelligent, always available assistance."
+              title="Always-On Support"
+              description="24/7 assistance to help you launch, scale, and optimize your outreach campaigns."
             />
             <Feature
               icon={<Shield size={24} />}
-              title="Data Security & Compliance"
-              description="Secured and protected with the industry leading standards."
+              title="Enterprise-Grade Security"
+              description="Your videos and lead data are protected with encrypted, cloud-secure storage."
             />
             <Feature
               icon={<Share2 size={24} />}
-              title="High-Quality Export"
-              description="Share high-quality outputs in various download-size formats & formats."
+              title="High-Quality Video Delivery"
+              description="Export and share videos across email, LinkedIn, WhatsApp, or your CRM in seconds."
             />
           </div>
         </div>

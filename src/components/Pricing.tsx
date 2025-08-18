@@ -362,43 +362,43 @@ export default function PricingSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <PricingTier
-            name="Starter"
-            price="$0"
-            description="Perfect for custom animation and motion graphics."
-            buttonText="Sign Up with Enterprise"
+            name="Starter Plan"
+            price="₹10"
+            description="Ideal for small teams testing personalized video outreach."
+            buttonText="Get Started"
             features={[
-              "Unlimited files",
-              "Unlimited editors",
-              "Export video, GIF, JPEG",
-              "720p, 30fps",
-              "Import from Figma",
+              "Basic personalization (name, company, logo, message)",
+              "Multi-channel sharing (Email, WhatsApp, LinkedIn)",
+              "Secure cloud storage",
+              "Standard support",
+              "Minimum: 5,000 videos (₹50,000 total)",
             ]}
           />
           <PricingTier
-            name="Professional"
-            price="$20"
-            description="Perfect for custom animation and motion graphics."
-            buttonText="Sign Up with Professional"
+            name="Growth Plan"
+            price="₹7"
+            description="Ideal for agencies and sales teams scaling campaigns."
+            buttonText="Get Started"
             popular={true}
             features={[
-              "Everything in Free",
-              "Unlimited folders",
-              "No watermark",
-              "HD export in 4K, 120fps",
-              "Team libraries",
+              "Advanced personalization (company details, industry insights, CTAs)",
+              "Team collaboration (up to 5 members)",
+              "Analytics dashboard (open rates, reply rates, meeting tracking)",
+              "Priority support",
+              "Minimum: 15,000 videos (₹1,05,000 total)",
             ]}
           />
           <PricingTier
-            name="Enterprise"
-            price="Custom"
-            description="Perfect for custom animation and motion graphics."
-            buttonText="Let's Chat!"
+            name="Enterprise Plan"
+            price="₹5"
+            description="Ideal for large organizations with advanced needs."
+            buttonText="Contact Sales"
             features={[
-              "Everything in Studio",
-              "Single sign-on (SSO)",
-              "Pre-release features",
-              "Personalized demo",
-              "Priority support",
+              "API access & CRM integrations (HubSpot, Salesforce, Zoho, etc.)",
+              "White-label branding (custom domain, templates, logos)",
+              "Dedicated account manager",
+              "Advanced reporting & compliance",
+              "Minimum: 40,000 videos (₹2,00,000 total)",
             ]}
           />
         </div>
