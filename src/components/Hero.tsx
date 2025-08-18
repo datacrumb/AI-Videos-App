@@ -6,7 +6,7 @@ export default function HeroSection() {
             <h1 className="text-4xl font-medium tracking-tight text-white sm:text-5xl md:text-6xl relative z-20">
                 Your New Fastest
                 <br />
-                {/* [#a638d3] */}
+                {/* Text color: #a638d3 */}
                 Route to <span className="text-blue-500">Revenue</span>
             </h1>
             <p className="mx-auto mt-4 max-w-xl text-sm text-gray-300 sm:text-base relative z-20">
