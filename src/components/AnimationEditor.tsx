@@ -161,7 +161,6 @@ export default function AnimationEditor() {
               ref={videoRef}
               className="h-full w-full object-cover rounded-lg"
               autoPlay 
-              loop
               playsInline
               controls={false}
               onTimeUpdate={handleTimeUpdate}
