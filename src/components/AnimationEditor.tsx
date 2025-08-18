@@ -1,7 +1,9 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { ChevronDown, Plus, Play, Pause, Loader2 } from "lucide-react"
+import { ChevronDown, Plus } from "lucide-react"
+import { FaPlay } from "react-icons/fa";
+import { FaPause } from "react-icons/fa6";
 import { Slider } from "@/components/ui/slider"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
@@ -32,79 +34,26 @@ export default function AnimationEditor() {
   const [opacity, setOpacity] = useState(100)
   const [fillOpacity, setFillOpacity] = useState(100)
 
+  // Simple video state
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
   const [isVideoReady, setIsVideoReady] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-  const [isSeeking, setIsSeeking] = useState(false)
-  const [bufferedRanges, setBufferedRanges] = useState<TimeRanges | null>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
 
+  // Fallback timer to ensure video is ready quickly
   useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    const handlePlay = () => {
-      setIsPlaying(true)
-      setIsLoading(false)
-    }
-
-    const handlePause = () => {
-      setIsPlaying(false)
-    }
-
-    const handleWaiting = () => {
-      setIsLoading(true)
-    }
-
-    const handleCanPlay = () => {
-      setIsLoading(false)
-      setIsVideoReady(true)
-    }
-
-    const handleLoadStart = () => {
-      setIsLoading(true)
-      setIsVideoReady(false)
-    }
-
-    const handleSeeking = () => {
-      setIsSeeking(true)
-      setIsLoading(true)
-    }
-
-    const handleSeeked = () => {
-      setIsSeeking(false)
-      setIsLoading(false)
-    }
-
-    const handleProgress = () => {
-      if (video.buffered) {
-        setBufferedRanges(video.buffered)
+    const timer = setTimeout(() => {
+      if (videoRef.current && !isVideoReady) {
+        if (videoRef.current.duration > 0) {
+          setDuration(videoRef.current.duration)
+          setIsVideoReady(true)
+        }
       }
-    }
+    }, 500) // 500ms fallback
 
-    // Add all event listeners
-    video.addEventListener("play", handlePlay)
-    video.addEventListener("pause", handlePause)
-    video.addEventListener("waiting", handleWaiting)
-    video.addEventListener("canplay", handleCanPlay)
-    video.addEventListener("loadstart", handleLoadStart)
-    video.addEventListener("seeking", handleSeeking)
-    video.addEventListener("seeked", handleSeeked)
-    video.addEventListener("progress", handleProgress)
-
-    return () => {
-      video.removeEventListener("play", handlePlay)
-      video.removeEventListener("pause", handlePause)
-      video.removeEventListener("waiting", handleWaiting)
-      video.removeEventListener("canplay", handleCanPlay)
-      video.removeEventListener("loadstart", handleLoadStart)
-      video.removeEventListener("seeking", handleSeeking)
-      video.removeEventListener("seeked", handleSeeked)
-      video.removeEventListener("progress", handleProgress)
-    }
-  }, [])
+    return () => clearTimeout(timer)
+  }, [isVideoReady])
 
   const handlePlayPause = () => {
     if (videoRef.current) {
@@ -117,33 +66,34 @@ export default function AnimationEditor() {
   }
 
   const handleTimeUpdate = () => {
-    if (videoRef.current && !isSeeking) {
+    if (videoRef.current) {
       setCurrentTime(videoRef.current.currentTime)
+      // Set duration as soon as we have any time data
+      if (videoRef.current.duration && videoRef.current.duration > 0) {
+        setDuration(videoRef.current.duration)
+        setIsVideoReady(true)
+      }
     }
   }
 
-  const handleLoadedMetadata = () => {
+  const handleCanPlay = () => {
     if (videoRef.current) {
       setDuration(videoRef.current.duration)
       setIsVideoReady(true)
     }
   }
 
+  const handlePlay = () => {
+    setIsPlaying(true)
+  }
+
+  const handlePause = () => {
+    setIsPlaying(false)
+  }
+
   const handleSliderChange = (values: number[]) => {
-    if (videoRef.current && isVideoReady && duration > 0) {
+    if (videoRef.current && duration > 0) {
       const newTime = (values[0] / 100) * duration
-
-      // Check if the time we're seeking to is buffered
-      const isTimeBuffered = bufferedRanges
-        ? Array.from({ length: bufferedRanges.length }, (_, i) => i).some(
-            (i) => newTime >= bufferedRanges.start(i) && newTime <= bufferedRanges.end(i),
-          )
-        : false
-
-      if (!isTimeBuffered) {
-        setIsLoading(true)
-      }
-
       videoRef.current.currentTime = newTime
       setCurrentTime(newTime)
     }
@@ -152,7 +102,7 @@ export default function AnimationEditor() {
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60)
     const seconds = Math.floor(time % 60)
-    return `${minutes}:${seconds.toString().padStart(2, "0")}`
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`
   }
 
   return (
@@ -207,16 +157,17 @@ export default function AnimationEditor() {
         <div className="flex-1 bg-[#0a1428] p-4">
           <div className="relative h-full w-full group">
             {/* Center Video */}
-            <video
+            <video 
               ref={videoRef}
               className="h-full w-full object-cover rounded-lg"
-              autoPlay
+              autoPlay 
               loop
-              muted
               playsInline
               controls={false}
               onTimeUpdate={handleTimeUpdate}
-              onLoadedMetadata={handleLoadedMetadata}
+              onCanPlay={handleCanPlay}
+              onPlay={handlePlay}
+              onPause={handlePause}
             >
               <source src="/videos/MamaZara.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -225,15 +176,13 @@ export default function AnimationEditor() {
             <div className="absolute inset-0 flex items-center justify-center">
               <button
                 onClick={handlePlayPause}
-                disabled={!isVideoReady}
-                className="bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-all duration-200 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={!videoRef.current || !videoRef.current.readyState}
+                className="bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-all duration-200 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed items-center justify-center"
               >
-                {isLoading || isSeeking ? (
-                  <Loader2 className="h-8 w-8 animate-spin" />
-                ) : isPlaying ? (
-                  <Pause className="h-8 w-8" />
+                {videoRef.current?.paused ? (
+                  <FaPlay className="h-8 w-8" />
                 ) : (
-                  <Play className="h-8 w-8 ml-1" />
+                  <FaPause className="h-8 w-8" />
                 )}
               </button>
             </div>
@@ -241,24 +190,15 @@ export default function AnimationEditor() {
             {/* Video Controls Overlay - Bottom */}
             <div className="absolute bottom-5 left-4 right-4 transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out">
               <div className="space-y-3">
+                {/* Video Progress */}
                 <div className="relative">
                   <Slider
                     value={[duration > 0 ? (currentTime / duration) * 100 : 0]}
                     onValueChange={handleSliderChange}
                     max={100}
-                    step={0.1}
-                    disabled={!isVideoReady || duration === 0}
+                    step={1}
                     className="flex-1"
                   />
-                  {/* Loading indicator for slider */}
-                  {/* {(isLoading || isSeeking) && (
-                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-black/70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                        <Loader2 className="h-3 w-3 animate-spin" />
-                        Loading...
-                      </div>
-                    </div>
-                  )} */}
                 </div>
 
                 {/* Time Display */}
