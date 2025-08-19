@@ -160,6 +160,7 @@ export default function AnimationEditor() {
             <video 
               ref={videoRef}
               className="h-full w-full object-cover rounded-lg"
+              poster="/Images/video-thumbnail.PNG"
               autoPlay 
               playsInline
               controls={false}
