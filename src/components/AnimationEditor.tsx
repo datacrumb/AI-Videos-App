@@ -177,7 +177,7 @@ export default function AnimationEditor() {
               <button
                 onClick={handlePlayPause}
                 disabled={!videoRef.current || !videoRef.current.readyState}
-                className="bg-black/50 hover:bg-black/70 text-white rounded-full p-3 opacity-0 group-hover:opacity-100 ease-out transition-all duration-200 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed items-center justify-center"
+                className="bg-black/50 hover:bg-black/70 text-white rounded-full p-4 opacity-0 group-hover:opacity-100 ease-out transition-all duration-200 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed items-center justify-center"
               >
                 {videoRef.current?.paused ? (
                   <FaPlay className="h-8 w-8" />
