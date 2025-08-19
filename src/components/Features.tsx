@@ -32,30 +32,7 @@ function FeatureCard({
 }: FeatureCardProps) {
   return (
     <Card
-      className={`overflow-hidden h-[400px] w-full rounded-lg flex flex-col ${className}`}
-      style={{
-        background:
-          "radial-gradient(43.69% 75.71% at 50% 44.52%, #10141A 0%, #08152B 50%, #0A1017 100%)",
-        border: "1px solid transparent",
-        borderRadius: "8px",
-        backgroundClip: "padding-box",
-        position: "relative",
-      }}
-    >
-      <div
-        className="absolute inset-0 rounded-lg pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(100% 100% at 50% 0%, rgba(59, 107, 191, 0.4) 34.9%, rgba(19, 43, 87, 0.4) 100%)",
-          mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-          maskComposite: "xor",
-          WebkitMask:
-            "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-          WebkitMaskComposite: "xor",
-          padding: "1px",
-        }}
-      />
-      
+      className={`gradient-card-alt overflow-hidden h-[400px] w-full rounded-lg flex flex-col ${className}`}>
       {top ? (
         <>
           <CardHeader className="pb-3 flex-shrink-0 space-y-2">
@@ -148,42 +125,50 @@ export default function FeaturesSection() {
         </div>
 
         {/* Custom grid layout with specific sizing */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
-          {/* Top-left: Large card spanning 4 columns (66.7% width) */}
-          <FeatureCard
-            title="Boost Response Rates"
-            description="Personalized videos outperform cold calls and emails, delivering up to 40% reply rates."
-            src="/Images/boost.png"
-            className="h-full md:col-span-4"
-            top={true}
-          />
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          {/* Top-left: Large card spanning 8 columns (66.7% width) */}
+          <div className="md:col-span-8">
+            <FeatureCard
+              title="Boost Response Rates"
+              description="Personalized videos outperform cold calls and emails, delivering up to 40% reply rates."
+              src="/Images/boost.png"
+              className="h-full"
+              top={true}
+            />
+          </div>
 
-          {/* Top-right: Small card spanning 2 columns (33.3% width) */}
-          <FeatureCard
-            title="Book More Meetings"
-            description="Teams report 5x more meetings booked with video outreach compared to traditional methods."
-            src="/Images/meetings.png"
-            className="h-full md:col-span-2"
-            top={true}
-          />
+          {/* Top-right: Small card spanning 4 columns (33.3% width) */}
+          <div className="md:col-span-4">
+            <FeatureCard
+              title="Book More Meetings"
+              description="Teams report 5x more meetings booked with video outreach compared to traditional methods."
+              src="/Images/meetings.png"
+              className="h-full"
+              top={true}
+            />
+          </div>
 
-          {/* Bottom-left: Equal size card spanning 3 columns */}
-          <FeatureCard
-            title="Cut Outreach Costs"
-            description="Send 1,000 personalized videos for just RS5,000—cheaper than SDR salaries or ads."
-            src="/Images/cost.png"
-            className="h-full md:col-span-3"
-            top={false}
-          />
+          {/* Bottom-left: Equal size card spanning 6 columns */}
+          <div className="md:col-span-7">
+            <FeatureCard
+              title="Cut Outreach Costs"
+              description="Send 1,000 personalized videos for just ₹5,000—cheaper than SDR salaries or ads."
+              src="/Images/cost.png"
+              className="h-full"
+              top={false}
+            />
+          </div>
 
-          {/* Bottom-right: Equal size card spanning 3 columns */}
-          <FeatureCard
-            title="Stand Out Instantly"
-            description="Unlike generic emails, videos build trust and leave a lasting impression."
-            src="/Images/standout.png"
-            className="h-full md:col-span-3"
-            top={false}
-          />
+          {/* Bottom-right: Equal size card spanning 6 columns */}
+          <div className="md:col-span-5">
+            <FeatureCard
+              title="Stand Out Instantly"
+              description="Unlike generic emails, videos build trust and leave a lasting impression."
+              src="/Images/standout.png"
+              className="h-full"
+              top={false}
+            />
+          </div>
         </div>
       </div>
     </section>
