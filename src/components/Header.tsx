@@ -35,6 +35,7 @@ export default function Header() {
         }}
       />
       <header className="relative w-full max-w-xl [background-color:rgba(0,0,0,0.25)] text-white border border-[#FFFFFF1F] rounded-full">
+        {/* Grid SVG */}
         <svg
             className="absolute inset-0 stroke-white -translate-x-40"
           width="1035"
