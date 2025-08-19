@@ -376,12 +376,12 @@ export function MarqueeDemo() {
           </linearGradient>
         </defs>
       </svg>
-      <div className="relative text-center mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white relative z-10">
+      <div className="relative text-center mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-white relative z-10">
           Our Customers
         </h1>
 
-        <p className="text-gray-400 mb-8 max-w-lg mx-auto relative z-10">
+        <p className="text-gray-400 max-w-lg mx-auto relative z-10">
           What people say about us.
         </p>
         

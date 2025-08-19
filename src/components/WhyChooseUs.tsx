@@ -21,8 +21,8 @@ function Feature({ icon, title, description }: FeatureProps) {
 export default function WhyChooseUs() {
   return (
     <section className="relative pt-16 pb-24 px-4 overflow-x-clip">
-      <div className="hidden md:block absolute inset-0 z-0 translate-x-[390px] translate-y-40">
-        <GradientBlob colors={["#6B49FF", "#6B49FF"]} size={440} blur={80} />
+      <div className="absolute inset-0 z-0 flex items-center justify-center">
+        <GradientBlob colors={["#6B49FF", "#6B49FF"]} size={500} blur={80} />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto">

@@ -1,4 +1,7 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
+import { openWhatsApp, whatsAppMessages } from "@/lib/whatsapp";
 
 export default function HeroSection() {
     return (
@@ -15,8 +18,16 @@ export default function HeroSection() {
                 their business, and pitch your offer — for just Rs 20 per video.
             </p>
             <div className="mt-8 flex justify-center gap-4 relative z-20">
-                <Button className="text-white px-4 py-2 bg-blue-500/25 rounded-lg shadow-[inset_0_0_10px_0_#0099FF]">Try it now</Button>
-                <Button variant="outline" className="border-[0.8px] border-gray-700 [border-image-slice:1] [background:linear-gradient(249.49deg,#1F1F1F_8.6%,#191919_19.56%,#0F0F0F_44.25%)] text-white hover:text-white px-4 py-2 rounded-lg">
+                <Button className="text-white px-4 py-2 bg-blue-500/25 hover:bg-blue-500/30 rounded-lg shadow-[inset_0_0_10px_0_#0099FF]"
+                onClick={() => openWhatsApp({
+                    message: whatsAppMessages.general,
+                  })}
+                >Try it now</Button>
+                <Button variant="outline" className="border-[0.8px] border-gray-700 [border-image-slice:1] [background:linear-gradient(249.49deg,#1F1F1F_8.6%,#191919_19.56%,#0F0F0F_44.25%)] text-white hover:text-white px-4 py-2 rounded-lg"
+                onClick={() => openWhatsApp({
+                    message: whatsAppMessages.demo,
+                  })}
+                >
                     Book your demo
                 </Button>
             </div>

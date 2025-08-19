@@ -1,5 +1,8 @@
+'use client';
+
 import type React from "react";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { openWhatsApp, whatsAppMessages } from "@/lib/whatsapp";
 
 interface PricingTierProps {
   name: string;
@@ -70,10 +73,14 @@ function PricingTier({
       <h3 className="text-base font-medium text-white">{name}</h3>
       <div className="mt-2 flex items-baseline">
         <span className="text-3xl font-bold text-white">{price}</span>
-        <span className="text-sm text-gray-400 ml-1">/monthly</span>
+        <span className="text-sm text-gray-400 ml-1">/Video</span>
       </div>
       <p className="mt-2 text-xs text-gray-400">{description}</p>
-      <button className="mt-5 mb-6 w-full rounded-md bg-white py-2 text-sm font-medium text-black hover:bg-gray-100 transition-colors">
+      <button className="mt-5 mb-6 w-full rounded-md bg-white py-2 text-sm font-medium cursor-pointer text-black hover:bg-gray-200 transition-colors"
+      onClick={() => openWhatsApp({
+        message: whatsAppMessages.pricing,
+      })}
+      >
         {buttonText}
       </button>
       <ul className="space-y-3">
@@ -90,7 +97,7 @@ function PricingTier({
 
 export default function PricingSection() {
   return (
-    <section className="relative py-16 px-4 bg-black">
+    <section className="relative py-16 px-4 bg-black" id="pricing">
       {/* Grid SVG */}
       <svg
         className="absolute inset-0 left-1/2 transform -translate-x-1/2 stroke-white"
@@ -363,7 +370,7 @@ export default function PricingSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <PricingTier
             name="Starter Plan"
-            price="₹10"
+            price="RS10"
             description="Ideal for small teams testing personalized video outreach."
             buttonText="Get Started"
             features={[
@@ -371,12 +378,12 @@ export default function PricingSection() {
               "Multi-channel sharing (Email, WhatsApp, LinkedIn)",
               "Secure cloud storage",
               "Standard support",
-              "Minimum: 5,000 videos (₹50,000 total)",
+              "Minimum: 5,000 videos (RS50,000 total)",
             ]}
           />
           <PricingTier
             name="Growth Plan"
-            price="₹7"
+            price="RS7"
             description="Ideal for agencies and sales teams scaling campaigns."
             buttonText="Get Started"
             popular={true}
@@ -385,12 +392,12 @@ export default function PricingSection() {
               "Team collaboration (up to 5 members)",
               "Analytics dashboard (open rates, reply rates, meeting tracking)",
               "Priority support",
-              "Minimum: 15,000 videos (₹1,05,000 total)",
+              "Minimum: 15,000 videos (RS1,05,000 total)",
             ]}
           />
           <PricingTier
             name="Enterprise Plan"
-            price="₹5"
+            price="RS5"
             description="Ideal for large organizations with advanced needs."
             buttonText="Contact Sales"
             features={[
@@ -398,7 +405,7 @@ export default function PricingSection() {
               "White-label branding (custom domain, templates, logos)",
               "Dedicated account manager",
               "Advanced reporting & compliance",
-              "Minimum: 40,000 videos (₹2,00,000 total)",
+              "Minimum: 40,000 videos (RS2,00,000 total)",
             ]}
           />
         </div>

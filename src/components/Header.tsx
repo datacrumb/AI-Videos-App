@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import MobileMenuSheet from "./MobileMenuSheet";
+import { openWhatsApp, whatsAppMessages } from "@/lib/whatsapp";
 
 const NavLinks = [
   {
@@ -10,12 +11,12 @@ const NavLinks = [
     href: "/",
   },
   {
-    name: "Template",
-    href: "/",
+    name: "Features",
+    href: "#features",
   },
   {
     name: "Pricing",
-    href: "/",
+    href: "#pricing",
   },
   {
     name: "About",
@@ -244,7 +245,7 @@ export default function Header() {
           {/* Navigation Bar */}
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 z-10">
               <Link href="/" className="flex items-center">
                 <svg
                   width="60"
@@ -278,7 +279,7 @@ export default function Header() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex md:space-x-10">
+            <nav className="hidden md:flex md:space-x-10 z-10">
               {NavLinks.map((nav) => (
                 <Link
                   key={nav.name}
@@ -291,11 +292,14 @@ export default function Header() {
             </nav>
 
             {/* CTA Button */}
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-4 z-10">
               <MobileMenuSheet />
               <Button
-                className="text-white px-4 py-2 bg-blue-500/25 rounded-lg shadow-[inset_0_0_10px_0_#0099FF]"
+                className="text-white px-4 py-2 bg-blue-500/25 hover:bg-blue-500/30 rounded-lg shadow-[inset_0_0_10px_0_#0099FF]"
                 size="sm"
+                onClick={() => openWhatsApp({
+                  message: whatsAppMessages.general,
+                })}
               >
                 Try it now
               </Button>

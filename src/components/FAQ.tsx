@@ -16,7 +16,7 @@ export default function FAQSection() {
     {
       question: "How much does each video cost?",
       answer:
-        "Our pricing ranges from ₹5 to ₹10 per video, depending on the volume you purchase. The larger the package, the lower the per-video cost.",
+        "Our pricing ranges from RS5 to RS10 per video, depending on the volume you purchase. The larger the package, the lower the per-video cost.",
     },
     {
       question: "What's the minimum order size?",
