@@ -20,6 +20,7 @@ interface FeatureCardProps {
   description: string;
   src: string;
   className?: string;
+  imageClassName?: string;
   top?: boolean;
 }
 
@@ -29,6 +30,7 @@ function FeatureCard({
   src,
   className = "",
   top = false,
+  imageClassName = "",
 }: FeatureCardProps) {
   return (
     <Card
@@ -36,19 +38,19 @@ function FeatureCard({
       {top ? (
         <>
           <CardHeader className="pb-3 flex-shrink-0 space-y-2">
-            <CardTitle className="text-white text-lg">{title}</CardTitle>
-            <CardDescription className="text-gray-400 text-xs">
+            <CardTitle className="text-white text-2xl">{title}</CardTitle>
+            <CardDescription className="text-gray-400 text-xl">
               {description}
             </CardDescription>
             <button
-              className="text-blue-400 items-center font-medium hover:text-blue-300 flex gap-1 text-xs cursor-pointer"
+              className="text-blue-400 items-center font-medium hover:text-blue-300 flex gap-1 text-xl cursor-pointer"
               onClick={() =>
                 openWhatsApp({
                   message: whatsAppMessages.features(title),
                 })
               }
             >
-              Try it now <ArrowRight className="h-3 w-3 ml-1" />
+              Try it now <ArrowRight className="h-5 w-5 ml-1 mt-1.5" />
             </button>
           </CardHeader>
           <CardContent className="flex items-center justify-center flex-1 min-h-0">
@@ -57,7 +59,7 @@ function FeatureCard({
               alt={title}
               width={1000}
               height={1000}
-              className="h-full w-full max-h-[280px] max-w-[500px] object-contain"
+              className={`h-full w-full object-contain ${imageClassName}`}
             />
           </CardContent>
         </>
@@ -69,24 +71,24 @@ function FeatureCard({
               alt={title}
               width={1000}
               height={1000}
-              className="h-full w-full max-h-[280px] max-w-[500px] object-contain"
+              className={`h-full w-full object-contain ${imageClassName}`}
             />
           </CardContent>
           <CardFooter className="pt-2 flex-shrink-0">
             <div className="w-full space-y-2">
-              <CardTitle className="text-white text-lg">{title}</CardTitle>
-              <CardDescription className="text-gray-400 text-xs">
+              <CardTitle className="text-white text-2xl">{title}</CardTitle>
+              <CardDescription className="text-gray-400 text-xl">
                 {description}
               </CardDescription>
               <button
-                className="text-blue-400 mt-4 font-medium hover:text-blue-300 flex gap-1 text-xs cursor-pointer items-center"
+                className="text-blue-400 mt-4 font-medium hover:text-blue-300 flex gap-1 text-xl cursor-pointer items-center"
                 onClick={() =>
                   openWhatsApp({
                     message: whatsAppMessages.features(title),
                   })
                 }
               >
-                Try it now <ArrowRight className="h-3 w-3 ml-1 " />
+                Try it now <ArrowRight className="h-5 w-5 ml-1 mt-1.5" />
               </button>
             </div>
           </CardFooter>
@@ -126,46 +128,46 @@ export default function FeaturesSection() {
 
         {/* Custom grid layout with specific sizing */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          {/* Top-left: Large card spanning 8 columns (66.7% width) */}
-          <div className="md:col-span-8">
+          <div className="md:col-span-6">
             <FeatureCard
               title="Boost Response Rates"
               description="Personalized videos outperform cold calls and emails, delivering up to 40% reply rates."
-              src="/Images/boost.png"
+              src="/Icons/BoostResponseRates.png"
               className="h-full"
+              imageClassName="max-h-[240px] max-w-[400px]"
               top={true}
             />
           </div>
 
-          {/* Top-right: Small card spanning 4 columns (33.3% width) */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-6">
             <FeatureCard
               title="Book More Meetings"
               description="Teams report 5x more meetings booked with video outreach compared to traditional methods."
-              src="/Images/meetings.png"
+              src="/Icons/BookMoreMeetings.png"
               className="h-full"
+              imageClassName="max-h-[240px] max-w-[400px]"
               top={true}
             />
           </div>
 
-          {/* Bottom-left: Equal size card spanning 6 columns */}
-          <div className="md:col-span-7">
+          <div className="md:col-span-6">
             <FeatureCard
               title="Cut Outreach Costs"
-              description="Send 1,000 personalized videos for just ₹5,000—cheaper than SDR salaries or ads."
-              src="/Images/cost.png"
+              description="Send 1,000 personalized videos for just RS5,000—cheaper than SDR salaries or ads."
+              src="/Icons/SaveCost.png"
               className="h-full"
+              imageClassName="max-h-[240px] max-w-[400px]"
               top={false}
             />
           </div>
 
-          {/* Bottom-right: Equal size card spanning 6 columns */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-6">
             <FeatureCard
               title="Stand Out Instantly"
               description="Unlike generic emails, videos build trust and leave a lasting impression."
-              src="/Images/standout.png"
+              src="/Icons/StandOutInstantly.png"
               className="h-full"
+              imageClassName="max-h-[240px] max-w-[400px]"
               top={false}
             />
           </div>
