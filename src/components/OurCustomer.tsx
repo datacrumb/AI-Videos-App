@@ -3,40 +3,124 @@ import { Marquee } from "@/components/magicui/marquee";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
+    name: "Sarah Khan",
+    username: "Marketing Manager",
+    body: "Finally, something that saves time and money.",
+    img: "https://avatar.vercel.sh/sarah",
   },
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
+    name: "Ahmed Raza",
+    username: "CEO, TechStart",
+    body: "This tool cut our outreach costs in half.",
+    img: "https://avatar.vercel.sh/ahmed",
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    name: "Jessica Lee",
+    username: "Sales Director",
+    body: "Big impact on revenue with minimal spend.",
+    img: "https://avatar.vercel.sh/jessica",
+  },
+  {
+    name: "David Smith",
+    username: "Founder, GrowthWorks",
+    body: "Our ROI skyrocketed within weeks.",
+    img: "https://avatar.vercel.sh/david",
+  },
+  {
+    name: "Maria Gonzalez",
+    username: "Brand Strategist",
+    body: "Budget-friendly and highly effective.",
+    img: "https://avatar.vercel.sh/maria",
+  },
+  {
+    name: "Ali Hussain",
+    username: "Operations Manager",
+    body: "Replaced our cold calling budget overnight.",
+    img: "https://avatar.vercel.sh/ali",
+  },
+  {
+    name: "Sophia Chen",
+    username: "VP Sales",
+    body: "Efficient, fast, and cost-saving. Love it.",
+    img: "https://avatar.vercel.sh/sophia",
+  },
+  {
+    name: "Omar Sheikh",
+    username: "Business Owner",
+    body: "Every rupee spent brings value back.",
+    img: "https://avatar.vercel.sh/omar",
+  },
+  {
+    name: "Emily Brown",
+    username: "Growth Consultant",
+    body: "Exactly what small businesses need.",
+    img: "https://avatar.vercel.sh/emily",
+  },
+  {
+    name: "Hassan Javed",
+    username: "Digital Marketing Lead",
+    body: "Our ad spend dropped, conversions rose.",
+    img: "https://avatar.vercel.sh/hassan",
+  },
+  {
+    name: "Priya Mehta",
+    username: "Entrepreneur",
+    body: "This is smarter than any campaign I've tried.",
+    img: "https://avatar.vercel.sh/priya",
+  },
+  {
+    name: "Michael Johnson",
+    username: "CFO, BrightEdge",
+    body: "Numbers don't lie—this boosts profits.",
+    img: "https://avatar.vercel.sh/michael",
+  },
+  {
+    name: "Fatima Noor",
+    username: "Product Manager",
+    body: "Money well spent, every single time.",
+    img: "https://avatar.vercel.sh/fatima",
+  },
+  {
+    name: "Daniel Carter",
+    username: "Sales Executive",
+    body: "Closed more deals without burning budget.",
+    img: "https://avatar.vercel.sh/daniel",
+  },
+  {
+    name: "Ayesha Siddiqui",
+    username: "Startup Founder",
+    body: "Perfect balance between cost and results.",
+    img: "https://avatar.vercel.sh/ayesha",
+  },
+  {
+    name: "John Walker",
+    username: "Marketing Analyst",
+    body: "Turned our limited budget into big wins.",
     img: "https://avatar.vercel.sh/john",
   },
   {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
+    name: "Nadia Rehman",
+    username: "Customer Success Head",
+    body: "Super affordable compared to alternatives.",
+    img: "https://avatar.vercel.sh/nadia",
   },
   {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
+    name: "Kevin Brooks",
+    username: "Business Consultant",
+    body: "Clients ask me how we do it so cheap.",
+    img: "https://avatar.vercel.sh/kevin",
   },
   {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
+    name: "Zara Malik",
+    username: "E-commerce Owner",
+    body: "Saved money, made more sales. Simple.",
+    img: "https://avatar.vercel.sh/zara",
+  },
+  {
+    name: "Chris Evans",
+    username: "Director of Sales Ops",
+    body: "This changed the way we spend on outreach.",
+    img: "https://avatar.vercel.sh/chris",
   },
 ];
 
@@ -444,12 +528,12 @@ export function MarqueeDemo() {
           </defs>
         </svg>
       </div>
-      <Marquee pauseOnHover className="[--duration:20s]">
+      <Marquee pauseOnHover className="[--duration:100s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
+      <Marquee reverse pauseOnHover className="[--duration:100s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
