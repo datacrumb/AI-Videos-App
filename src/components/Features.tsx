@@ -40,8 +40,8 @@ function FeatureCard({
           <CardHeader className="pb-3 flex-shrink-0 space-y-2">
             <CardTitle className="text-white text-2xl">{title}</CardTitle>
             <CardDescription className="text-gray-400 text-xl">
-              {description}
-            </CardDescription>
+          {description}
+        </CardDescription>
             <button
               className="text-blue-400 items-center font-medium hover:text-blue-300 flex gap-1 text-xl cursor-pointer group"
               onClick={() =>
@@ -52,7 +52,7 @@ function FeatureCard({
             >
               Try it now <ArrowRight className="h-5 w-5 ml-1 mt-1.5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
-          </CardHeader>
+      </CardHeader>
           <CardContent className="flex items-center justify-center flex-1 min-h-0">
             <Image
               src={src}
@@ -91,7 +91,7 @@ function FeatureCard({
                 Try it now <ArrowRight className="h-5 w-5 ml-1 mt-1.5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
-          </CardFooter>
+      </CardFooter>
         </>
       )}
     </Card>
@@ -129,15 +129,15 @@ export default function FeaturesSection() {
         {/* Custom grid layout with specific sizing */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           <div className="md:col-span-6">
-            <FeatureCard
+          <FeatureCard
               title="Boost Response Rates"
               description="Personalized videos outperform cold calls and emails, delivering up to 40% reply rates."
               src="/Icons/BoostResponseRates.png"
               className="h-full"
               imageClassName="max-h-[240px] max-w-[400px]"
               top={true}
-            />
-          </div>
+                      />
+                    </div>
 
           <div className="md:col-span-6">
             <FeatureCard
@@ -147,11 +147,11 @@ export default function FeaturesSection() {
               className="h-full"
               imageClassName="max-h-[240px] max-w-[400px]"
               top={true}
-            />
-          </div>
+                      />
+                    </div>
 
           <div className="md:col-span-6">
-            <FeatureCard
+          <FeatureCard
               title="Cut Outreach Costs"
               description="Send 1,000 personalized videos for just RS5,000—cheaper than SDR salaries or ads."
               src="/Icons/SaveCost.png"
@@ -159,7 +159,7 @@ export default function FeaturesSection() {
               imageClassName="max-h-[240px] max-w-[400px]"
               top={false}
             />
-          </div>
+                  </div>
 
           <div className="md:col-span-6">
             <FeatureCard
@@ -170,7 +170,7 @@ export default function FeaturesSection() {
               imageClassName="max-h-[240px] max-w-[400px]"
               top={false}
             />
-          </div>
+                </div>
         </div>
       </div>
     </section>

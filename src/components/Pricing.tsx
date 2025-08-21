@@ -379,7 +379,7 @@ export default function PricingSection() {
               "Multi-channel sharing (Email, WhatsApp, LinkedIn)",
               "Secure cloud storage",
               "Standard support",
-              "Minimum: 5,000 videos (RS50,000 total)",
+              "Minimum: 500 videos (Rs 7,500 total)",
             ]}
           />
           <PricingTier
@@ -393,7 +393,7 @@ export default function PricingSection() {
               "Team collaboration (up to 5 members)",
               "Analytics dashboard (open rates, reply rates, meeting tracking)",
               "Priority support",
-              "Minimum: 15,000 videos (RS1,05,000 total)",
+              "Minimum: 2000 videos (Rs 26,000 total)",
             ]}
           />
           <PricingTier
@@ -407,7 +407,7 @@ export default function PricingSection() {
               "White-label branding (custom domain, templates, logos)",
               "Dedicated account manager",
               "Advanced reporting & compliance",
-              "Minimum: 40,000 videos (RS2,00,000 total)",
+              "Minimum: 5000 videos (Rs 50,000 total)",
             ]}
           />
         </div>
