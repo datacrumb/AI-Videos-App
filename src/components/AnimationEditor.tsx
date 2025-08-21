@@ -117,7 +117,7 @@ export default function AnimationEditor() {
         <div className="flex-1 bg-[#0a1428] p-4 md:min-h-[600px] md:min-w-[600px] max-h-[700px] max-w-[1000px]">
           <div className="relative h-full w-full group">
             {/* Center Video */}
-            <video 
+            <video
               ref={videoRef}
               className="h-full w-full object-cover rounded-lg md:min-h-[600px] md:min-w-[600px] max-h-[700px] max-w-[1000px]"
               poster="/Images/video-thumbnail.PNG"
@@ -134,32 +134,32 @@ export default function AnimationEditor() {
             </video>
 
             <div className="absolute inset-0 flex items-center justify-center">
-                              <button
-                  onClick={handlePlayPause}
-                  disabled={!videoRef.current || !videoRef.current.readyState}
-                  className="bg-black/50 hover:bg-black/70 text-white rounded-full p-2 lg:p-4 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 ease-out transition-all duration-200 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed items-center justify-center"
-                >
-                  {videoRef.current?.paused ? (
-                    <FaPlay className="lg:h-8 lg:w-8 w-4 h-4" />
-                  ) : (
-                    <FaPause className="lg:h-8 lg:w-8 w-4 h-4" />
-                  )}
-                </button>
-              </div>
+              <button
+                onClick={handlePlayPause}
+                disabled={!videoRef.current || !videoRef.current.readyState}
+                className="bg-black/50 hover:bg-black/70 text-white rounded-full p-2 lg:p-4 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 ease-out transition-all duration-200 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed items-center justify-center"
+              >
+                {videoRef.current?.paused ? (
+                  <FaPlay className="lg:h-8 lg:w-8 w-4 h-4" />
+                ) : (
+                  <FaPause className="lg:h-8 lg:w-8 w-4 h-4" />
+                )}
+              </button>
+            </div>
 
-              {/* Video Controls Overlay - Bottom */}
-              <div className="absolute bottom-2 lg:bottom-5 left-4 right-4 transform translate-y-0 opacity-100 lg:translate-y-full lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-300 ease-out">
+            {/* Video Controls Overlay - Bottom */}
+            <div className="absolute bottom-2 lg:bottom-5 left-4 right-4 transform translate-y-0 opacity-100 lg:translate-y-full lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-300 ease-out">
               <div className="space-y-3">
                 {/* Video Progress */}
                 <div className="relative">
-                <Slider
+                  <Slider
                     value={[duration > 0 ? (currentTime / duration) * 100 : 0]}
                     onValueChange={handleSliderChange}
-                  max={100}
-                  step={1}
-                  className="flex-1"
-                />
-            </div>
+                    max={100}
+                    step={1}
+                    className="flex-1"
+                  />
+                </div>
 
                 {/* Time Display */}
                 <div className="flex items-center justify-between text-xs text-gray-200">
@@ -168,8 +168,8 @@ export default function AnimationEditor() {
                 </div>
               </div>
             </div>
-              </div>
-            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

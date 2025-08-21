@@ -3,6 +3,13 @@
 import type React from "react";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { openWhatsApp, whatsAppMessages } from "@/lib/whatsapp";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { useCallback, useEffect, useState } from "react";
 
 interface PricingTierProps {
   name: string;
@@ -72,21 +79,21 @@ function PricingTier({
       )}
       <h3 className="text-base font-medium text-white">{name}</h3>
       <div className="mt-2 flex items-baseline">
-        <span className="text-3xl font-bold text-white">{price}</span>
+        <span className="text-lg md:text-3xl font-bold text-white">{price}</span>
         <span className="text-sm text-gray-400 ml-1">{planType === "starter" ? "/Video (minimum 500 videos)" : planType === "growth" ? "/Video (Minimum 2000 videos)" : "/Video (Minimum 5000 videos)"}</span>
       </div>
       <p className="mt-2 text-xs text-gray-400">{description}</p>
       <button className="mt-5 mb-6 w-full rounded-md bg-white py-2 text-sm font-medium cursor-pointer text-black hover:bg-gray-200 transition-colors"
-      onClick={() => openWhatsApp({
-        message: whatsAppMessages.pricing,
-      })}
+        onClick={() => openWhatsApp({
+          message: whatsAppMessages.pricing,
+        })}
       >
         {buttonText}
       </button>
       <ul className="space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <IoIosCheckmarkCircleOutline  className="h-4 w-4 text-[#6366F1] mr-2 mt-0.5 flex-shrink-0 stroke-[3px]" />
+            <IoIosCheckmarkCircleOutline className="h-4 w-4 text-[#6366F1] mr-2 mt-0.5 flex-shrink-0 stroke-[3px]" />
             <span className="text-sm text-gray-300">{feature}</span>
           </li>
         ))}
@@ -96,6 +103,70 @@ function PricingTier({
 }
 
 export default function PricingSection() {
+  const [api, setApi] = useState<any>(null);
+  const [current, setCurrent] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    onSelect();
+    api.on("select", onSelect);
+    return () => api.off("select", onSelect);
+  }, [api, onSelect]);
+
+  const scrollTo = useCallback((index: number) => {
+    api?.scrollTo(index);
+  }, [api]);
+
+  const pricingTiers = [
+    {
+      name: "Starter Plan",
+      price: "Rs 15",
+      description: "Ideal for small teams testing personalized video outreach.",
+      buttonText: "Get Started",
+      planType: "starter" as const,
+      features: [
+        "Basic personalization (name, company, logo, message)",
+        "Multi-channel sharing (Email, WhatsApp, LinkedIn)",
+        "Secure cloud storage",
+        "Standard support",
+        "Minimum: 500 videos (Rs 7,500 total)",
+      ],
+    },
+    {
+      name: "Growth Plan",
+      price: "Rs 13",
+      description: "Ideal for agencies and sales teams scaling campaigns.",
+      buttonText: "Get Started",
+      planType: "growth" as const,
+      features: [
+        "Advanced personalization (company details, industry insights, CTAs)",
+        "Team collaboration (up to 5 members)",
+        "Analytics dashboard (open rates, reply rates, meeting tracking)",
+        "Priority support",
+        "Minimum: 2000 videos (Rs 26,000 total)",
+      ],
+    },
+    {
+      name: "Enterprise Plan",
+      price: "Rs 10",
+      description: "Ideal for large organizations with advanced needs.",
+      buttonText: "Contact Sales",
+      planType: "enterprise" as const,
+      features: [
+        "API access & CRM integrations (HubSpot, Salesforce, Zoho, etc.)",
+        "White-label branding (custom domain, templates, logos)",
+        "Dedicated account manager",
+        "Advanced reporting & compliance",
+        "Minimum: 5000 videos (Rs 50,000 total)",
+      ],
+    },
+  ];
+
   return (
     <section className="relative py-16 px-4 bg-black" id="pricing">
       {/* Grid SVG */}
@@ -367,49 +438,70 @@ export default function PricingSection() {
           </svg>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <PricingTier
-            name="Starter Plan"
-            price="Rs 15"
-            description="Ideal for small teams testing personalized video outreach."
-            buttonText="Get Started"
-            planType="starter"
-            features={[
-              "Basic personalization (name, company, logo, message)",
-              "Multi-channel sharing (Email, WhatsApp, LinkedIn)",
-              "Secure cloud storage",
-              "Standard support",
-              "Minimum: 500 videos (Rs 7,500 total)",
+        {/* Desktop Grid Layout */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6">
+          {pricingTiers.map((tier, index) => (
+            <PricingTier
+              key={index}
+              name={tier.name}
+              price={tier.price}
+              description={tier.description}
+              buttonText={tier.buttonText}
+              planType={tier.planType}
+              features={tier.features}
+            />
+          ))}
+        </div>
+
+        {/* Mobile Carousel Layout */}
+        <div className="md:hidden">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+                stopOnInteraction: true,
+              }),
             ]}
-          />
-          <PricingTier
-            name="Growth Plan"
-            price="Rs 13"
-            description="Ideal for agencies and sales teams scaling campaigns."
-            buttonText="Get Started"
-            planType="growth"
-            features={[
-              "Advanced personalization (company details, industry insights, CTAs)",
-              "Team collaboration (up to 5 members)",
-              "Analytics dashboard (open rates, reply rates, meeting tracking)",
-              "Priority support",
-              "Minimum: 2000 videos (Rs 26,000 total)",
-            ]}
-          />
-          <PricingTier
-            name="Enterprise Plan"
-            price="Rs 10"
-            description="Ideal for large organizations with advanced needs."
-            buttonText="Contact Sales"
-            planType="enterprise"
-            features={[
-              "API access & CRM integrations (HubSpot, Salesforce, Zoho, etc.)",
-              "White-label branding (custom domain, templates, logos)",
-              "Dedicated account manager",
-              "Advanced reporting & compliance",
-              "Minimum: 5000 videos (Rs 50,000 total)",
-            ]}
-          />
+            setApi={setApi}
+            className="w-full"
+          >
+            <CarouselContent>
+              {pricingTiers.map((tier, index) => (
+                <CarouselItem key={index} className="basis-full">
+                  <div className="p-1">
+                    <PricingTier
+                      name={tier.name}
+                      price={tier.price}
+                      description={tier.description}
+                      buttonText={tier.buttonText}
+                      planType={tier.planType}
+                      features={tier.features}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          
+          {/* Dots Navigation */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {pricingTiers.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollTo(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  current === index 
+                    ? "bg-white scale-125" 
+                    : "bg-white/30 hover:bg-white/50"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
