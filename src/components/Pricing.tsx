@@ -9,7 +9,7 @@ interface PricingTierProps {
   price: string | React.ReactNode;
   description: string;
   features: string[];
-  popular?: boolean;
+  planType: string;
   buttonText: string;
 }
 
@@ -18,12 +18,12 @@ function PricingTier({
   price,
   description,
   features,
-  popular,
+  planType,
   buttonText,
 }: PricingTierProps) {
   // Determine which gradient style to apply based on the plan name
   const getCardStyle = () => {
-    if (popular) {
+    if (planType === "growth") {
       return {
         background:
           "linear-gradient(180deg, #1B1430 0%, #0F0D16 50%, #1B1430 100%)",
@@ -58,13 +58,13 @@ function PricingTier({
         borderImageSource: cardStyle.borderImageSource,
       }}
     >
-      {popular && (
+      {planType === "growth" && (
         <div className="absolute right-6 top-6">
           <div
             className="border-[0.8px] border-[#6B49FF]
             [background:radial-gradient(77.66%_77.66%_at_50%_50%,#181620_15.9%,#1E1930_50.9%,#332C4F_100%)] 
             [box-shadow:inset_0px_-4px_12px_#6B49FF99,0px_16px_32px_#00000033] 
-            text-white px-4 py-2 rounded-full"
+            text-white px-2 py-1 rounded-full"
           >
             Popular
           </div>
@@ -73,7 +73,7 @@ function PricingTier({
       <h3 className="text-base font-medium text-white">{name}</h3>
       <div className="mt-2 flex items-baseline">
         <span className="text-3xl font-bold text-white">{price}</span>
-        <span className="text-sm text-gray-400 ml-1">/Video</span>
+        <span className="text-sm text-gray-400 ml-1">{planType === "starter" ? "/Video (minimum 500 videos)" : planType === "growth" ? "/Video (Minimum 2000 videos)" : "/Video (Minimum 5000 videos)"}</span>
       </div>
       <p className="mt-2 text-xs text-gray-400">{description}</p>
       <button className="mt-5 mb-6 w-full rounded-md bg-white py-2 text-sm font-medium cursor-pointer text-black hover:bg-gray-200 transition-colors"
@@ -370,9 +370,10 @@ export default function PricingSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <PricingTier
             name="Starter Plan"
-            price="RS10"
+            price="Rs 15"
             description="Ideal for small teams testing personalized video outreach."
             buttonText="Get Started"
+            planType="starter"
             features={[
               "Basic personalization (name, company, logo, message)",
               "Multi-channel sharing (Email, WhatsApp, LinkedIn)",
@@ -383,10 +384,10 @@ export default function PricingSection() {
           />
           <PricingTier
             name="Growth Plan"
-            price="RS7"
+            price="Rs 13"
             description="Ideal for agencies and sales teams scaling campaigns."
             buttonText="Get Started"
-            popular={true}
+            planType="growth"
             features={[
               "Advanced personalization (company details, industry insights, CTAs)",
               "Team collaboration (up to 5 members)",
@@ -397,9 +398,10 @@ export default function PricingSection() {
           />
           <PricingTier
             name="Enterprise Plan"
-            price="RS5"
+            price="Rs 10"
             description="Ideal for large organizations with advanced needs."
             buttonText="Contact Sales"
+            planType="enterprise"
             features={[
               "API access & CRM integrations (HubSpot, Salesforce, Zoho, etc.)",
               "White-label branding (custom domain, templates, logos)",

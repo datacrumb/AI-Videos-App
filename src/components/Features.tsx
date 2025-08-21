@@ -43,14 +43,14 @@ function FeatureCard({
               {description}
             </CardDescription>
             <button
-              className="text-blue-400 items-center font-medium hover:text-blue-300 flex gap-1 text-xl cursor-pointer"
+              className="text-blue-400 items-center font-medium hover:text-blue-300 flex gap-1 text-xl cursor-pointer group"
               onClick={() =>
                 openWhatsApp({
                   message: whatsAppMessages.features(title),
                 })
               }
             >
-              Try it now <ArrowRight className="h-5 w-5 ml-1 mt-1.5" />
+              Try it now <ArrowRight className="h-5 w-5 ml-1 mt-1.5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
           </CardHeader>
           <CardContent className="flex items-center justify-center flex-1 min-h-0">
@@ -81,14 +81,14 @@ function FeatureCard({
                 {description}
               </CardDescription>
               <button
-                className="text-blue-400 mt-4 font-medium hover:text-blue-300 flex gap-1 text-xl cursor-pointer items-center"
+                className="text-blue-400 mt-4 font-medium hover:text-blue-300 flex gap-1 text-xl cursor-pointer items-center group"
                 onClick={() =>
                   openWhatsApp({
                     message: whatsAppMessages.features(title),
                   })
                 }
               >
-                Try it now <ArrowRight className="h-5 w-5 ml-1 mt-1.5" />
+                Try it now <ArrowRight className="h-5 w-5 ml-1 mt-1.5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
           </CardFooter>
@@ -111,7 +111,7 @@ export default function FeaturesSection() {
             border-[0.8px] border-[#6B49FF]
             [background:radial-gradient(77.66%_77.66%_at_50%_50%,#181620_15.9%,#1E1930_50.9%,#332C4F_100%)] 
             [box-shadow:inset_0px_-4px_12px_#6B49FF99,0px_16px_32px_#00000033] 
-            text-white px-4 py-2 rounded-full mb-10"
+            text-white px-4 py-2 rounded-full mb-6 text-xl cursor-auto"
             >
               Amazing
             </Button>
