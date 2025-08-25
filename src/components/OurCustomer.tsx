@@ -174,7 +174,7 @@ const ReviewCard = ({
 
 export function MarqueeDemo() {
   return (
-    <div className="relative py-20 flex w-full flex-col items-center justify-center overflow-x-clip">
+    <div id="customers" className="relative py-20 flex w-full flex-col items-center justify-center overflow-x-clip">
       {/* Grid SVG - Responsive and Centered */}
       <svg
         className="absolute inset-0 left-1/2 transform -translate-x-1/2 stroke-white"

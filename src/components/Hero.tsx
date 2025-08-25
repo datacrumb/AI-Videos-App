@@ -5,7 +5,7 @@ import { openWhatsApp, whatsAppMessages } from "@/lib/whatsapp";
 
 export default function HeroSection() {
     return (
-        <section className="py-12 pt-10 text-center relative z-20">
+        <section id="home" className="py-12 pt-10 text-center relative z-20">
             <h1 className="text-4xl font-medium tracking-tight text-white sm:text-5xl md:text-6xl relative z-20">
                 Your New Fastest
                 <br />

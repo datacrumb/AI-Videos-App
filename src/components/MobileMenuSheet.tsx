@@ -22,10 +22,10 @@ const MobileMenuSheet = () => {
             <SheetTitle className="text-white">Menu</SheetTitle>
           </SheetHeader>
           <div className="flex flex-col gap-4 mt-4 pl-5 text-white">
-            <Link href="/">Home</Link>
-            <Link href="/">Template</Link>
-            <Link href="/">Pricing</Link>
-            <Link href="/">About</Link>
+            <Link href="#home">Home</Link>
+            <Link href="#features">Features</Link>
+            <Link href="#pricing">Pricing</Link>
+            <Link href="#customers">Customers</Link>
           </div>
         </SheetContent>
       </Sheet>

@@ -8,7 +8,7 @@ import { openWhatsApp, whatsAppMessages } from "@/lib/whatsapp";
 const NavLinks = [
   {
     name: "Home",
-    href: "/",
+    href: "#home",
   },
   {
     name: "Features",
@@ -19,8 +19,8 @@ const NavLinks = [
     href: "#pricing",
   },
   {
-    name: "About",
-    href: "/",
+    name: "Customers",
+    href: "#customers",
   },
 ];
 
